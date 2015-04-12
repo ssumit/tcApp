@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 
 public class TCExecutors {
     public static ExecutorWrapper app = getExecutor(1, "app");
-    public static ExecutorWrapper app = getExecutor(1, "http");
+    public static ExecutorWrapper http = getExecutor(1, "http");
     public static Executor ui = new Executor() {
         @Override
         public void execute(Runnable command) {
