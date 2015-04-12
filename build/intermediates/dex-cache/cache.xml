@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/ssumit/tcApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/classes-451c87442828993f4aba4db0ead71eb65db1a735.jar" />
+    </item>
+    <item
+        jar="/home/ssumit/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9c6ef172e8de35fd8d4d8783e4821e57cdef7445">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/guava-17.0-dd4a58b4c2ad43b3f3fde289b2d6374fc0bf34a3.jar" />
+    </item>
+    <item
+        jar="/home/ssumit/tcApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5435274e104c1a504ec610daeb0d5d9518f671a2.jar" />
+    </item>
+    <item
+        jar="/home/ssumit/tcApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/classes-5d7eeca2acf41f33455bdaa9862269fc94da18ae.jar" />
+    </item>
+    <item
+        jar="/home/ssumit/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-cf643b6ba5b7cd7ab2bd6089a838b7313809c653.jar" />
+    </item>
+    <item
+        jar="/home/ssumit/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.5/77bf7cacf9cefe19dc105e5425d2eb1bb5285881/android-async-http-1.4.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
+        <dex dex="/home/ssumit/tcApp/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.5-07aadd5c99c0a88cb744d971e7bfd4b63abdbf04.jar" />
+    </item>
+
+</items>
