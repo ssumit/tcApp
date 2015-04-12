@@ -10,6 +10,8 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        buildConfigField "String", "QUERY_URL", "\"http://www.truecaller.com/support\""
+        buildConfigField "int", "FIRST_QUERY_CHARACTER_POSITION", "10"
     }
     buildTypes {
         release {
