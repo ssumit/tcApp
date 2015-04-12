@@ -23,7 +23,7 @@ public class CharacterRequestTextView extends WebTextView {
         Futures.addCallback(_settableFuture, new FutureCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                setText(result.charAt(index));
+                setText(Character.toString(result.charAt(index)));
             }
 
             @Override

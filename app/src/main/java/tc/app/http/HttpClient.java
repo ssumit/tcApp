@@ -11,11 +11,15 @@ import java.util.Arrays;
 import java.util.concurrent.Executor;
 
 import tc.app.executor.TCExecutors;
+import tc.app.logger.ILogger;
+import tc.app.logger.LOG_LEVEL;
+import tc.app.logger.Logger;
 
 public class HttpClient {
     private AsyncHttpClient client = new AsyncHttpClient();
     private Executor _executor = TCExecutors.ui;
     private static HttpClient _this;
+    private ILogger _logger = new Logger("HttpClient");
     private Cache<String, ListenableFuture<String>> _cache = new Cache<>(); // can replace by proper cache with eviction policy
 
     public synchronized static HttpClient getInstance() {
@@ -43,12 +47,14 @@ public class HttpClient {
                 client.get(webUrl, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                        settableFuture.set(Arrays.toString(responseBody));
+                        String body = new String(responseBody);
+                        _logger.log(LOG_LEVEL.DEBUG, body);
+                        settableFuture.set(body);
                     }
 
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                        _logger.log(LOG_LEVEL.ERROR, new String(responseBody), error);
                     }
                 });
             }
