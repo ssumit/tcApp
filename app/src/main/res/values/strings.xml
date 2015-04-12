@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">tcApp</string>
+    <string name="home_screen_request_button_label">Go</string>
+</resources>
