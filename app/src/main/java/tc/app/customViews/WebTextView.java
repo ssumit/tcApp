@@ -14,6 +14,7 @@ import tc.app.http.HttpClient;
 
 public abstract class WebTextView extends TextView {
     protected SettableFuture<String> _settableFuture = SettableFuture.create();
+    private String _webUrl;
     private HttpClient _httpClient = HttpClient.getInstance();
 
     public WebTextView(Context context) {
@@ -29,17 +30,24 @@ public abstract class WebTextView extends TextView {
     }
 
     public void fetchFrom(String webUrl) {
-        ListenableFuture<String> contentFuture = _httpClient.getContent(webUrl);
-        Futures.addCallback(contentFuture, new FutureCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                _settableFuture.set(result);
-            }
+        if (isNewRequest(webUrl)) {
+            _webUrl = webUrl;
+            ListenableFuture<String> contentFuture = _httpClient.getContent(webUrl);
+            Futures.addCallback(contentFuture, new FutureCallback<String>() {
+                @Override
+                public void onSuccess(String result) {
+                    _settableFuture.set(result);
+                }
 
-            @Override
-            public void onFailure(Throwable t) {
-                _settableFuture.setException(t);
-            }
-        }, TCExecutors.ui);
+                @Override
+                public void onFailure(Throwable t) {
+                    _settableFuture.setException(t);
+                }
+            }, TCExecutors.ui);
+        }
+    }
+
+    private boolean isNewRequest(String webUrl) {
+        return _webUrl == null || !_webUrl.equalsIgnoreCase(webUrl);
     }
 }

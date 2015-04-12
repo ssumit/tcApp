@@ -6,14 +6,18 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 
+import tc.app.logger.ILogger;
+import tc.app.logger.LOG_LEVEL;
+import tc.app.logger.Logger;
+
 public class ExecutorWrapper extends ScheduledThreadPoolExecutor {
 
     private static final String LOG_MSG = "Crash in executor: ";
-    private final String _label;
+    private ILogger _logger;
 
     public ExecutorWrapper(int corePoolSize, String label) {
         super(corePoolSize, ThreadFactoryMaker.get(label));
-        _label = label;
+        _logger = new Logger(label);
     }
 
     @Override
@@ -34,7 +38,7 @@ public class ExecutorWrapper extends ScheduledThreadPoolExecutor {
             }
         }
         if (t != null) {
-            //todo: log error (LOG_MSG + _label, t);
+            _logger.log(LOG_LEVEL.ERROR, LOG_MSG, t);
         }
     }
 

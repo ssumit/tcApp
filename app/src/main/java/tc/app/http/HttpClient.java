@@ -8,13 +8,13 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.apache.http.Header;
 
 import java.util.Arrays;
+import java.util.concurrent.Executor;
 
-import tc.app.executor.ExecutorWrapper;
 import tc.app.executor.TCExecutors;
 
 public class HttpClient {
     private AsyncHttpClient client = new AsyncHttpClient();
-    private ExecutorWrapper _executor = TCExecutors.http;
+    private Executor _executor = TCExecutors.ui;
     private static HttpClient _this;
     private Cache<String, ListenableFuture<String>> _cache = new Cache<>(); // can replace by proper cache with eviction policy
 
@@ -37,7 +37,7 @@ public class HttpClient {
     }
 
     private void fetchUrl(final SettableFuture<String> settableFuture, final String webUrl) {
-        _executor.submit(new Runnable() {
+        _executor.execute(new Runnable() {
             @Override
             public void run() {
                 client.get(webUrl, new AsyncHttpResponseHandler() {
