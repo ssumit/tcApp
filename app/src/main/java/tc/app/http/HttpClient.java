@@ -53,7 +53,13 @@ public class HttpClient {
 
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        _logger.log(LOG_LEVEL.ERROR, new String(responseBody), error);
+                        String body;
+                        if (responseBody != null) {
+                            body = "http response body:" + new String(responseBody);
+                        } else {
+                            body = "No http response body";
+                        }
+                        _logger.log(LOG_LEVEL.ERROR, body, error);
                         settableFuture.setException(error);
                         _cache.remove(webUrl);
                     }
