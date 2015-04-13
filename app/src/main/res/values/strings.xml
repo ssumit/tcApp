@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">tcApp</string>
     <string name="home_screen_request_button_label">Go</string>
+    <string name="home_screen_query_failed_toast_message">Please try again.</string>
 </resources>

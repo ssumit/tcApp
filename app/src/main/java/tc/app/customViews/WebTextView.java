@@ -9,6 +9,8 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 
+import tc.app.R;
+import tc.app.ToastMaker;
 import tc.app.executor.TCExecutors;
 import tc.app.http.HttpClient;
 
@@ -16,17 +18,25 @@ public abstract class WebTextView extends TextView {
     protected SettableFuture<String> _settableFuture = SettableFuture.create();
     private String _webUrl;
     private HttpClient _httpClient = HttpClient.getInstance();
+    private ToastMaker _toastMaker;
 
     public WebTextView(Context context) {
         super(context);
+        init();
     }
 
     public WebTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public WebTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
+        _toastMaker = ToastMaker.getInstance();
     }
 
     public void fetchFrom(String webUrl) {
@@ -42,6 +52,7 @@ public abstract class WebTextView extends TextView {
                 @Override
                 public void onFailure(Throwable t) {
                     _settableFuture.setException(t);
+                    _toastMaker.showToast(R.string.home_screen_query_failed_toast_message);
                 }
             }, TCExecutors.ui);
         }

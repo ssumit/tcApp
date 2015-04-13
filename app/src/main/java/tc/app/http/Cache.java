@@ -23,4 +23,8 @@ public class Cache<K, V> {
     public boolean containsKey(K k) {
         return _map.containsKey(k);
     }
+
+    public void remove(K k) {
+        _map.remove(k);
+    }
 }

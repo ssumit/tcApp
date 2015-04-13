@@ -7,7 +7,6 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.apache.http.Header;
 
-import java.util.Arrays;
 import java.util.concurrent.Executor;
 
 import tc.app.executor.TCExecutors;
@@ -19,7 +18,7 @@ public class HttpClient {
     private AsyncHttpClient client = new AsyncHttpClient();
     private Executor _executor = TCExecutors.ui;
     private static HttpClient _this;
-    private ILogger _logger = new Logger("HttpClient");
+    private final ILogger _logger = new Logger("HttpClient");
     private Cache<String, ListenableFuture<String>> _cache = new Cache<>(); // can replace by proper cache with eviction policy
 
     public synchronized static HttpClient getInstance() {
@@ -35,12 +34,12 @@ public class HttpClient {
         } else {
             SettableFuture<String> settableFuture = SettableFuture.create();
             _cache.put(webUrl, settableFuture);
-            fetchUrl(settableFuture, webUrl);
+            fetchUrl(webUrl, settableFuture);
             return settableFuture;
         }
     }
 
-    private void fetchUrl(final SettableFuture<String> settableFuture, final String webUrl) {
+    private void fetchUrl(final String webUrl, final SettableFuture<String> settableFuture) {
         _executor.execute(new Runnable() {
             @Override
             public void run() {
@@ -55,6 +54,8 @@ public class HttpClient {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                         _logger.log(LOG_LEVEL.ERROR, new String(responseBody), error);
+                        settableFuture.setException(error);
+                        _cache.remove(webUrl);
                     }
                 });
             }
