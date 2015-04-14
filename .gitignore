@@ -1,4 +1,5 @@
 .gradle
+build/
 # apk generation folders out by idea and bin by ant
 out/
 bin/
