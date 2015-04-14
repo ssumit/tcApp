@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import tc.app.customViews.CharacterIteratorTextView;
 import tc.app.customViews.CharacterRequestTextView;
@@ -26,11 +27,14 @@ public class HomeScreen extends Activity {
                         CharacterRequestTextView view = (CharacterRequestTextView) findViewById(R.id.home_screen_simple_character_view);
                         view.fetchFrom(BuildConfig.QUERY_URL);
                         view.showCharacter(BuildConfig.FIRST_QUERY_CHARACTER_POSITION);
+                        TextView characterViewTitle = (TextView) findViewById(R.id.home_screen_simple_character_view_title);
+                        characterViewTitle.setText(String.format(getString(R.string.home_screen_simple_character_view_title), BuildConfig.FIRST_QUERY_CHARACTER_POSITION));
 
                         CharacterIteratorTextView characterIteratorTextView =
                                 (CharacterIteratorTextView) findViewById(R.id.home_screen_character_iterator_view);
                         characterIteratorTextView.fetchFrom(BuildConfig.QUERY_URL);
                         characterIteratorTextView.showWithCharFrequency(BuildConfig.CHARACTER_ITERATING_INTERVAL);
+                        characterViewTitle.setText(String.format(getString(R.string.home_screen_simple_character_view_title), BuildConfig.FIRST_QUERY_CHARACTER_POSITION));
 
                         WordCounterTextView counterTextView = (WordCounterTextView) findViewById(R.id.home_screen_character_count_view);
                         counterTextView.fetchFrom(BuildConfig.QUERY_URL);

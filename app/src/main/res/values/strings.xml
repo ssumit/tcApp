@@ -2,4 +2,8 @@
     <string name="app_name">tcApp</string>
     <string name="home_screen_request_button_label">Go</string>
     <string name="home_screen_query_failed_toast_message">Please try again.</string>
+    <string name="home_screen_simple_character_view_title">%1$sth Character:</string>
+    <string name="home_screen_word_count_query_title">Word:</string>
+    <string name="home_screen_character_count_view_title">Frequency:</string>
+    <string name="home_screen_character_iterator_view_title">Next Character:</string>
 </resources>

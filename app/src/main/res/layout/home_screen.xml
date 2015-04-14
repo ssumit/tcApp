@@ -4,6 +4,7 @@
               android:layout_height="match_parent"
               android:layout_margin="10dp"
               android:orientation="vertical"
+              android:background="@color/white"
     >
 
     <LinearLayout
@@ -13,9 +14,10 @@
         >
 
         <TextView
+            android:id="@+id/home_screen_simple_character_view_title"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="%1$sth Character: "
+            android:text="@string/home_screen_simple_character_view_title"
             android:textStyle="bold"
             />
 
@@ -40,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="%1$sth Character: "
+            android:text="@string/home_screen_character_iterator_view_title"
             android:textStyle="bold"
             />
 
@@ -66,16 +68,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Word: "
+            android:text="@string/home_screen_word_count_query_title"
             android:textStyle="bold"
             />
 
         <EditText
             android:id="@+id/home_screen_word_count_query"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:textSize="@dimen/home_screen_query_result_text_size"
+            android:textColor="@color/black"
+            android:background="@null"
             />
     </LinearLayout>
 
@@ -88,7 +93,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Frequency "
+            android:text="@string/home_screen_character_count_view_title"
             android:textStyle="bold"
             />
 
