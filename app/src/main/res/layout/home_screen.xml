@@ -6,38 +6,104 @@
               android:orientation="vertical"
     >
 
-    <tc.app.customViews.CharacterRequestTextView
-        android:id="@+id/home_screen_simple_character_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/home_screen_query_result_text_size"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
 
-    <tc.app.customViews.CharacterIteratorTextView
-        android:id="@+id/home_screen_character_iterator_view"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/home_screen_query_result_text_size"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="%1$sth Character: "
+            android:textStyle="bold"
+            />
 
-    <tc.app.customViews.WordCounterTextView
-        android:id="@+id/home_screen_character_count_view"
+        <tc.app.customViews.CharacterRequestTextView
+            android:id="@+id/home_screen_simple_character_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/home_screen_query_result_text_size"
+            />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/home_screen_query_result_text_size"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="%1$sth Character: "
+            android:textStyle="bold"
+            />
+
+        <tc.app.customViews.CharacterIteratorTextView
+            android:id="@+id/home_screen_character_iterator_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/home_screen_query_result_text_size"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Word: "
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/home_screen_word_count_query"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="@dimen/home_screen_query_result_text_size"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Frequency "
+            android:textStyle="bold"
+            />
+
+        <tc.app.customViews.WordCounterTextView
+            android:id="@+id/home_screen_character_count_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/home_screen_query_result_text_size"
+            />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/home_screen_request_button"

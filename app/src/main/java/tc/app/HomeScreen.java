@@ -2,10 +2,13 @@ package tc.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
+import android.widget.EditText;
 
 import tc.app.customViews.CharacterIteratorTextView;
 import tc.app.customViews.CharacterRequestTextView;
+import tc.app.customViews.WordCounterTextView;
 
 public class HomeScreen extends Activity {
     @Override
@@ -28,6 +31,12 @@ public class HomeScreen extends Activity {
                                 (CharacterIteratorTextView) findViewById(R.id.home_screen_character_iterator_view);
                         characterIteratorTextView.fetchFrom(BuildConfig.QUERY_URL);
                         characterIteratorTextView.showWithCharFrequency(BuildConfig.CHARACTER_ITERATING_INTERVAL);
+
+                        WordCounterTextView counterTextView = (WordCounterTextView) findViewById(R.id.home_screen_character_count_view);
+                        counterTextView.fetchFrom(BuildConfig.QUERY_URL);
+                        EditText queryWord = (EditText) findViewById(R.id.home_screen_word_count_query);
+                        String text = queryWord.getText().toString();
+                        counterTextView.showFrequencyFor(text);
                     }
                 });
     }
