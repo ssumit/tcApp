@@ -18,7 +18,7 @@ public abstract class WebTextView extends TextView {
     protected SettableFuture<String> _settableFuture = SettableFuture.create();
     private String _webUrl;
     private HttpClient _httpClient = HttpClient.getInstance();
-    private ToastMaker _toastMaker;
+    protected ToastMaker _toastMaker;
 
     public WebTextView(Context context) {
         super(context);

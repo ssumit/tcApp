@@ -12,6 +12,7 @@ android {
         versionName "1.0"
         buildConfigField "String", "QUERY_URL", "\"http://www.truecaller.com/support\""
         buildConfigField "int", "FIRST_QUERY_CHARACTER_POSITION", "10"
+        buildConfigField "int", "CHARACTER_ITERATING_INTERVAL", "10"
     }
     buildTypes {
         release {

@@ -60,8 +60,8 @@ public class HttpClient {
                             body = "No http response body";
                         }
                         _logger.log(LOG_LEVEL.ERROR, body, error);
-                        settableFuture.setException(error);
                         _cache.remove(webUrl);
+                        settableFuture.setException(error);
                     }
                 });
             }
