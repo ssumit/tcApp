@@ -9,4 +9,4 @@ reported. A toast is shown if there is an error and class ToastMaker is a easy u
 the same.
 
 Since the project was simple and I had almost no time due to prior commitments, lot of scope for
-improvements is there.
+improvements is there (especially UI/UX).
