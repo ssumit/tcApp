@@ -7,6 +7,8 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 
 public class CharacterRequestTextView extends WebTextView {
+    private static final String SINGLE_QUOTE = "'";
+
     public CharacterRequestTextView(Context context) {
         super(context);
     }
@@ -23,7 +25,7 @@ public class CharacterRequestTextView extends WebTextView {
         Futures.addCallback(_settableFuture, new FutureCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                setText(Character.toString(result.charAt(index)));
+                setText(SINGLE_QUOTE + Character.toString(result.charAt(index)) + SINGLE_QUOTE);
             }
 
             @Override

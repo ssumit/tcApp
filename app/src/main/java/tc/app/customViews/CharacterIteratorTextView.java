@@ -8,6 +8,7 @@ import com.google.common.util.concurrent.Futures;
 
 public class CharacterIteratorTextView extends WebTextView {
     private int position = 0;
+    private static final String SINGLE_QUOTE = "'";
 
     public CharacterIteratorTextView(Context context) {
         super(context);
@@ -30,7 +31,7 @@ public class CharacterIteratorTextView extends WebTextView {
                         _toastMaker.showToast("Very short text on url. Showing first character");
                     }
                 }
-                setText(Character.toString(result.charAt(position)));
+                setText(SINGLE_QUOTE + Character.toString(result.charAt(position)) + SINGLE_QUOTE);
             }
 
             @Override
