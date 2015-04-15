@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:layout_margin="10dp"
+              android:padding="10dp"
               android:orientation="vertical"
               android:background="@color/white"
     >
@@ -116,7 +116,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/blue"
+        android:background="@drawable/home_screen_request_button_selector"
         android:gravity="center"
         android:text="@string/home_screen_request_button_label"
         android:textColor="@color/white"
