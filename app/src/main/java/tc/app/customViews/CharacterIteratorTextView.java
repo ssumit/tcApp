@@ -21,6 +21,7 @@ public class CharacterIteratorTextView extends WebTextView {
         Futures.addCallback(_settableFuture, new FutureCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                position = position + charFreq;
                 if (position > result.length()) {
                     if (charFreq < result.length()) {
                         position = charFreq;
